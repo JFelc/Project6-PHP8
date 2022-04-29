@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid d-flex">
+		<div class="bg-img-signup">
+		<img class="img-fluid" src="mute_grab.jpg"> </img></div>
+		<div class="parent-form d-flex">
+        
+			<div class="signup-form">
+            <h1 class="mb-5 text-center" style="font-size: 1.4rem;" > Bienvenue sur le site communautaire SnowTricks </h1> 
+				{# <form action="{{ path('sign_up') }}" method="post">
+						<h2>Register</h2>
+						<p class="hint-text">Create your account. It's free and only takes a minute.</p>
+				        <div class="form-group">
+							<input type="text" class="form-control" name="username" placeholder="Username" required="required">       	
+				        </div>
+				        <div class="form-group">
+				        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+				        </div>
+						<div class="form-group">
+				            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+				        </div>
+						{# <div class="form-group">
+				            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+				        </div>        
+				        <div class="form-group">
+							<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+						</div> 
+						<div class="form-group">
+				            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+				        </div>
+				    </form> #}
+
+				{{ form_start(registrationForm) }}
+				{{ form_row(registrationForm.username) }}
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+				{# {{ form_row(registrationForm.agreeTerms) }} #}
+                <div class="d-flex justify-content-center">
+				<button type="submit" class="btn btn-primary">Register</button>
+                </div>
+
+				{{ form_end(registrationForm) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

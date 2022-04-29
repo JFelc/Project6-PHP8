@@ -1,0 +1,33 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% if error %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+<div class="container-fluid d-flex login-spread">
+    <div class="signup-form align-self-center">
+                <form action="{{ path('security_login') }}" method="post">
+                    <fieldset>
+                        <legend><i class="fa fa-lock mb-3" aria-hidden="true"></i> {{ 'Login'|trans }}</legend>
+                        <div class="form-group mb-3">
+                            <label for="username">{{ 'Username'|trans }}</label>
+                            <input type="text" id="username" name="username" value="{{ last_username }}" class="form-control"/>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password">{{ 'Password'|trans }}</label>
+                            <input type="password" id="password" name="password" class="form-control" />
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa -sign-in" aria-hidden="true"></i> {{ 'Sign in'|trans }}
+                        </button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div> 
+                    <a  href="signup"> No account ? </a>
+    </div>
+</div>
+{% endblock %}

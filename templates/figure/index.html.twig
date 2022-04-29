@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FigureController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="card-group">
+    <div class="background">
+      <div class="row">
+        <div class="card col-6 offset-md-3">
+          <div class="card">
+            <img class="card-img-top" src="{{tricks.photos[0].url}}" alt="Card image cap">
+            <span class="fa-stack fa-2x bg-white position-absolute end-0 figure-edits">
+            <i class="fas fa-edit"></i>
+            <a href="{{ path('deleteFigure', {'id': tricks.photos[0].id}) }}"><i class="fas fa-trash-alt"></i></a>
+            </span>
+            <div class="card-img-overlay d-flex h-100">
+            <h4 class="card-title my-auto text-white text-center w-100"> {{tricks.name}} </h4>
+            </div>
+            </div>
+              <div class="row">
+               {% for photo in tricks.photos %}
+               <div class="col-4">
+                    <img src="{{photo.url}}" class="card-img" alt="...">
+                </div> 
+                {% endfor %}
+                </div>
+                <div>
+                {{tricks.description}}
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                  {{dump(tricks)}}
+                  </div>
+                </div>
+              </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+.signup-form{
+    width: 450px;
+    margin: 0 auto;
+    padding: 30px 0;
+    font-size: 15px;
+}
+
+.signup-form form {
+    color: #999;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: #f2f3f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+.background{
+    background-image: url("Big_Pine_landscape.jpg");
+    background-size: 100%;
+    width: 100%;
+    height: 700px;
+}
+.figure-edits{
+    z-index: 99;
+}
+.bg-img-signup{
+    width: 50%;
+    height: 100vh;
+}
+.login-spread{
+    width: 100%;
+    height: 100vh;
+}
+.parent-form{
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
